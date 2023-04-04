@@ -5,8 +5,8 @@ use rusty_ytdl::*;
 async fn main() {
     println!("Enter your youtube video url");
     let url: String = read!();
-    println!("{}", url);
-
+    println!("You entered: {}", url);
+    
     let video_options = VideoOptions {
         quality: VideoQuality::Highest,
         filter: VideoSearchOptions::VideoAuido,
@@ -14,5 +14,8 @@ async fn main() {
     };
 
     let video = Video::new_with_options(url, video_options).unwrap();
-    _ = video.download().await;
+    println!("Downloading...");
+    let a: Result<Vec<u8>, VideoError> = video.download().await;
+    println!("Error while downloading: {:?}", a.err());
+    println!("Download ended.");
 }
