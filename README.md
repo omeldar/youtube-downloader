@@ -1,3 +1,3 @@
 # Rust Youtube Downloader
 
-Not working!
+This app is using the ![rusty_ytdl](https://github.com/Mithronn/rusty_ytdl) crate.
