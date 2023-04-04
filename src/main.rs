@@ -21,7 +21,7 @@ async fn main() {
         match args[i].as_str() {
             "--lowest-quality" => video_quality = VideoQuality::Lowest,
             "--highest-video" => video_quality = VideoQuality::HighestVideo,
-            "--only-audio" => video_search_opt = VideoSearchOptions::Audio,
+            "--audio-only" => video_search_opt = VideoSearchOptions::Audio,
             _ => println!("Argument {} not found", args[i])
         }
     }
